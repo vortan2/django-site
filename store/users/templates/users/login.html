@@ -12,6 +12,7 @@
                             {% if messages %}
                                 {% for message in messages %}
                                     {{ message }}
+                                {% endfor %}
                             {% else %}
                                 {{ form.non_field_errors }}
                             {% endif %}

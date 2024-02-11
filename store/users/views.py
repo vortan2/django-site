@@ -30,7 +30,7 @@ def registration(request):
     else:
         form = UserRegistrationForm()
     context = {'form': form}
-    return render( request, 'users/registration.html.html', context)
+    return render( request, 'users/registration.html', context)
 
 
 def profile(request):
