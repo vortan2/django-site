@@ -3,6 +3,9 @@ from users.models import User
 class ProductCategory(models.Model):
     name =  models.CharField(max_length=128, unique=True)
     desc = models.TextField(null=True, blank=True)
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
     def __str__(self):
         return self.name
 class Product(models.Model):
@@ -29,6 +32,10 @@ class Basket (models.Model):
     created_timestamp = models.DateTimeField(auto_now_add=True)
 
     objects = BasketQuerySet.as_manager()
+
+    class Meta:
+        verbose_name = 'Продукты'
+        verbose_name_plural = 'Продукты'
     def __str__(self):
         return f'Корзина для {self.user.email} | Продукт: {self.product.name}'
 
